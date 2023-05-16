@@ -1,8 +1,8 @@
-# Coin Tracker
+# Todo-List
 
 ## 설명
 
-가상 화폐 시세 조회 페이지
+React로 구현한 Todo-list
 
 <br>
 <br>
