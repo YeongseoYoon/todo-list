@@ -18,24 +18,25 @@ function ToDo({ text, category, id }: IToDo) {
       ];
     });
   };
+
+  const renderCategoryButtons = () => {
+    const categoryButtons = Object.values(Categories).map((categoryValue) => {
+      if (category !== categoryValue) {
+        return (
+          <button key={categoryValue} name={categoryValue} onClick={onClick}>
+            {categoryValue}
+          </button>
+        );
+      }
+      return null;
+    });
+
+    return categoryButtons;
+  };
   return (
     <li>
       <span>{text}</span>
-      {category !== Categories.DOING && (
-        <button name={Categories.DOING} onClick={onClick}>
-          Doing
-        </button>
-      )}
-      {category !== Categories.TO_DO && (
-        <button name={Categories.TO_DO} onClick={onClick}>
-          To Do
-        </button>
-      )}
-      {category !== Categories.DONE && (
-        <button name={Categories.DONE} onClick={onClick}>
-          Done
-        </button>
-      )}
+      {renderCategoryButtons()}
     </li>
   );
 }
